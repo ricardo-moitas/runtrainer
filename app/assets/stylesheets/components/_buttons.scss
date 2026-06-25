@@ -1,0 +1,70 @@
+.btn-sign-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  width: 120px;
+  height: 30px;
+  text-decoration: none;
+  color: $color-accent;
+  border: 1px solid $color-accent;
+  border-radius: 3px;
+  transition: ease 0.3s;
+
+  &:hover {
+    background-color: $color-accent;
+    color: $color-text-main;
+  }
+}
+
+.btn-sign-in {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  width: 120px;
+  height: 30px;
+  text-decoration: none;
+  color: $color-secondary-border;
+  border: 1px solid $color-secondary-border;
+  border-radius: 3px;
+  transition: ease 0.3s;
+
+  &:hover {
+    background-color: $color-secondary-border;
+    color: $color-text-main;
+  }
+}
+
+.btn-primary {
+  background-color: $color-accent;
+  border: none;
+  font-family: $headers-font;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-bottom: 10px;
+
+  &:hover {
+    background-color: $color-hover-accent;
+    box-shadow: 0 0 15px rgba($color-accent, 0.6);
+  }
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid $color-secondary-border;
+  color: $color-text-muted;
+  font-family: $headers-font;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  width: 100%;
+
+  &:hover {
+    border-color: $color-text-main;
+    color: $color-text-main;
+  }
+}

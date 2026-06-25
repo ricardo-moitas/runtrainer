@@ -1,2 +1,52 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div>
+          <h1><%= render "layouts/logo" %></h1>
+        </div>
+        <p>An AI-powered trainer built to understand your running data and guide your progress.</p>
+        <% if user_signed_in? %>
+          <%= link_to "View My Runs", "#", class: "btn btn-success" %>
+        <% else%>
+          <div class="d-flex justify-content-center gap-3">
+            <%= link_to "Sign in", new_user_session_path, class: "btn-sign-in" %> <%= link_to "Sign up", new_user_registration_path, class: "btn-sign-up" %>
+          </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="features-section text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-4">
+        <div class="feature">
+          <h3><span class="text-neon">1.</span> Log Your Runs</h3>
+          <p>Add your training data. Try it right now and start tracking your progress today!</p>
+          <%= image_tag "add_circle.svg", alt: "heart-icon", class: "icon-feature" %>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <div class=" feature">
+          <h3><span class="text-neon">2.</span> AI Analysis</h3>
+          <p>Our artificial intelligence analyzes your pace and progress.</p>
+          <%= image_tag "analyze.svg", alt: "heart-icon", class: "icon-feature" %>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <div class="feature">
+          <h3><span class="text-neon">3.</span> Progress Safely</h3>
+          <p>Get custom plans and tips tailored to your heart rate and goals.</p>
+          <%= image_tag "heart_pulse.svg", alt: "heart-icon", class: "icon-feature" %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<%= render "layouts/footer" %>
