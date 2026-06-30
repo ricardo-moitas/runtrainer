@@ -1,0 +1,20 @@
+<div class="container mt-5">
+  <h1 class="text-neon">Welcome to your Dashboard</h1>
+
+  <div class="mt-4">
+    <%= link_to "+ Run", new_run_path, class: "btn btn-primary" %>
+  </div>
+
+  <div class="d-flex flex-column align-items-center mt-4">
+    <% @runs.each do |run| %>
+      <div class="run-card mb-3">
+        <div class="col-md-4">
+          <h5 class="card-title pb-3">Run of <span class="text-neon"><%= run.date %></span></h5>
+          <p>Distance: <%= run.distance %> km</p>
+          <p>Duration: <%= run.hours.to_i %>h <%= run.minutes.to_i %>m <%= run.seconds.to_i %>s</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>

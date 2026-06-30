@@ -1,0 +1,22 @@
+<div class="form-container">
+  <%= simple_form_for @run do |f| %>
+    <%= f.input :date, as: :date, html5: true, required: true %>
+    <%= f.input :distance, label: "Distance (km)", required: true %>
+    <div class="row">
+      <div class="col-4">
+        <%= f.input :hours, label: "Hours", input_html: { min: 0 } %>
+      </div>
+      <div class="col-4">
+        <%= f.input :minutes, label: "Minutes", input_html: { min: 0, max: 59 } %>
+      </div>
+      <div class="col-4">
+        <%= f.input :seconds, label: "Seconds", input_html: { min: 0, max: 59 } %>
+      </div>
+    </div>
+    <%= f.input :heart_rate %>
+    <%= f.input :cadence %>
+    <%= f.input :elevation %>
+
+    <%= f.button :submit, "Save Run", class: "btn-primary" %>
+  <% end %>
+</div>

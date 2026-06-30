@@ -1,0 +1,19 @@
+.run-card {
+  background-color: $color-bg-input;
+  border: 1px solid $color-accent;
+  color: $color-text-main;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 450px;
+  white-space: nowrap;
+
+  h5 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+}
