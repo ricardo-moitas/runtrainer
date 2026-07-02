@@ -5,7 +5,12 @@
   border-radius: 12px;
   padding: 24px;
   max-width: 450px;
+  min-width: 450px;
+  width: 100%;
+  margin: 0 auto;
   white-space: nowrap;
+  text-align: left;
+  position: relative;
 
   h5 {
     font-size: 1.25rem;
@@ -15,5 +20,23 @@
   p {
     margin-bottom: 1rem;
     font-size: 1rem;
+  }
+
+  .ai-icon-wrapper {
+    display: flex;
+    position: absolute;
+    top: 50px;
+    right: 24px;
+  }
+}
+
+.run-card-link {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: block; // Garante que o link ocupa a área do cartão
+
+  &:hover {
+    transform: translateY(-2px);
+    transition: 0.2s;
   }
 }

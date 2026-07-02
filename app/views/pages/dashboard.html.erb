@@ -1,5 +1,7 @@
-<div class="container mt-5">
-  <h1 class="text-neon">Welcome to your Dashboard</h1>
+<div class="container mt-5 text-center">
+  <h1 class="text-neon">
+    <span style="color: white; font-weight: bold;">> </span><%= @runs.any? ? "Your Training Logs" : "Ready to Start?" %><span style="color: white; font-weight: bold;"> <</span>
+  </h1>
 
   <div class="mt-4">
     <%= link_to "+ Run", new_run_path, class: "btn btn-primary" %>
@@ -7,13 +9,17 @@
 
   <div class="d-flex flex-column align-items-center mt-4">
     <% @runs.each do |run| %>
-      <div class="run-card mb-3">
-        <div class="col-md-4">
+      <%= link_to run_path(run), class: "run-card-link" do %>
+        <div class="run-card mb-3">
           <h5 class="card-title pb-3">Run of <span class="text-neon"><%= run.date %></span></h5>
           <p>Distance: <%= run.distance %> km</p>
           <p>Duration: <%= run.hours.to_i %>h <%= run.minutes.to_i %>m <%= run.seconds.to_i %>s</p>
+          <span class="ai-icon-wrapper"
+                onclick="event.stopPropagation(); event.preventDefault(); window.location.href='<%= chat_run_path(run) %>';">
+            <%= image_tag "ai-analyze", alt: "ai", class: "icon-feature" %>
+          </span>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 

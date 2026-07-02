@@ -6,6 +6,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @runs = current_user.runs
+    @runs = current_user.runs.order(date: :desc)
   end
 end
