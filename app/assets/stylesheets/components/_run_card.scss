@@ -33,7 +33,7 @@
 .run-card-link {
   text-decoration: none !important;
   color: inherit !important;
-  display: block; // Garante que o link ocupa a área do cartão
+  display: block;
 
   &:hover {
     transform: translateY(-2px);

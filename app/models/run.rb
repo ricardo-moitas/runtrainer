@@ -1,6 +1,7 @@
 class Run < ApplicationRecord
   attr_accessor :hours, :minutes, :seconds
   belongs_to :user
+  has_many :messages, dependent: :destroy
 
   before_validation :convert_to_seconds
   validates :date, presence: true

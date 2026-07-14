@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :runs, only: [:new, :create, :show] do
     member do
       get :chat, to: 'chats#chat'
+      post :chat, to: 'chats#create'
     end
   end
 end
