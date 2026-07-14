@@ -1,0 +1,17 @@
+.banner {
+  padding: 100px 20px;
+  background-color: $color-bg-site;
+  color: $color-text-main;
+
+  p {
+    color: $color-text-muted;
+  }
+
+  h1 {
+    font-family: $headers-font;
+  }
+}
+
+.text-neon {
+  color: $color-accent;
+}

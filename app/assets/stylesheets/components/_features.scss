@@ -1,0 +1,29 @@
+.features-section {
+  background-color: #d9d9d9;
+  padding: 180px 0;
+
+  @media (max-width: 767px) {
+    padding: 60px 20px;
+  }
+}
+
+.feature {
+  margin-bottom: 30px;
+  height: 100%;
+
+  h3 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 12px;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.icon-feature {
+  margin-top: 15px;
+  height: 50px;
+  width: auto;
+  display: inline-block;
+}

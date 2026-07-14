@@ -1,0 +1,23 @@
+.footer-section {
+  background-color: black;
+  color: #f8f9fa;
+  padding: 40px 24px;
+
+  .logo {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+  }
+
+  .disclaimer {
+    font-size: 0.8rem;
+    color: #8e9cae;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+  }
+
+  .copyright {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin: 0;
+  }
+}
