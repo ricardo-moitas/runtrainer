@@ -20,9 +20,30 @@ class RunsController < ApplicationController
     end
   end
 
+  def show
+    @run = current_user.runs.find(params[:id])
+  end
+
   private
 
   def run_params
     params.require(:run).permit(:date, :distance, :duration, :heart_rate, :cadence, :elevation, :hours, :minutes, :seconds)
   end
 end
+
+
+class User
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+end
+
+u1 = User.new("Ricardo")
+u2 = User.new("João")
+
+u1.name = "Pedro"
+
+puts u1.name
+puts u2.name
