@@ -20,6 +20,10 @@ class RunsController < ApplicationController
     end
   end
 
+  def show
+    @run = current_user.runs.find(params[:id])
+  end
+
   private
 
   def run_params

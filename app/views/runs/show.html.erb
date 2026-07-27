@@ -1,0 +1,42 @@
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+
+      <div class="run-card">
+        <h2 class="mb-4 text-center">Run of <span class="text-neon"><%= @run.date %></span></h2>
+
+        <div class="d-flex justify-content-between mb-4">
+          <div class="text-center">
+            <p class="mb-0">Distance</p>
+            <h4 class="mb-0"><%= @run.distance %> km</h4>
+          </div>
+          <div class="text-center">
+            <p class="mb-0">Pace</p>
+            <%
+              total_seconds_per_km = (@run.duration / @run.distance.to_f)
+              minutes = (total_seconds_per_km / 60).to_i
+              seconds = (total_seconds_per_km % 60).round
+            %>
+            <h4 class="mb-0"><%= minutes %>:<%= seconds.to_s.rjust(2, '0') %> min/km</h4>
+          </div>
+        </div>
+
+        <div class="border-top border-secondary pt-3 mt-3">
+          <p><strong class="text-neon">Heart Rate:</strong> <%= @run.heart_rate || "N/A" %> bpm</p>
+          <p><strong class="text-neon">Cadence:</strong> <%= @run.cadence || "N/A" %> spm</p>
+          <p><strong class="text-neon">Elevation:</strong> <%= @run.elevation || 0 %> m</p>
+        </div>
+
+        <span class="ai-analyze-btn"
+          onclick="event.stopPropagation(); event.preventDefault(); window.location.href='<%= chat_run_path(@run) %>';">
+          <%= image_tag "ai-analyze", alt: "ai", class: "icon-feature" %>
+        </span>
+      </div>
+
+      <div class="mt-3 text-center">
+        <%= link_to "Back to Dashboard", dashboard_path, class: "btn btn-secondary" %>
+      </div>
+
+    </div>
+  </div>
+</div>

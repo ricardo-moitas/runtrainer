@@ -67,3 +67,26 @@
     color: $color-text-main;
   }
 }
+
+.ai-analyze-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 242, 255, 0.1);
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 10px auto;
+
+  &:hover {
+    background-color: var(--neon-blue);
+    transform: scale(1.1);
+  }
+
+  .icon-feature {
+    margin: 0 !important;
+  }
+}
