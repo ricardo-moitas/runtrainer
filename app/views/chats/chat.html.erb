@@ -12,10 +12,12 @@
     </div>
     <div class="history-list">
       <% @history.each do |r| %>
-          <div class="card-history">
+        <%= link_to chat_run_path(r), class: "text-decoration-none" do %>
+          <div class="card-history <%= 'active-chat' if r == @run %>">
             <div class="text-neon"><%= r.date %></div>
             <small class="history-distance"><%= r.distance %> km</small>
           </div>
+          <% end %>
       <% end %>
     </div>
   </div>
@@ -37,8 +39,8 @@
     <div class="chat-input">
       <%= form_with url: chat_run_path, method: :post, class: "mt-3" do |f| %>
         <div class="input-group">
-          <%= f.text_field :message, class: "form-control", placeholder: "Escreve uma pergunta...", required: true %>
-          <%= f.submit "Enviar", class: "btn btn-primary pb-3" %>
+          <%= f.text_field :message, class: "form-control", placeholder: "write a question...", required: true %>
+          <%= f.submit "Send", class: "btn btn-primary pb-3" %>
         </div>
       <% end %>
     </div>
