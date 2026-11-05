@@ -6,11 +6,12 @@ class Run < ApplicationRecord
   before_validation :convert_to_seconds
   validates :date, presence: true
   validates :distance, presence: true, numericality: { greater_than: 0 }
-  validates :minutes, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 59 }
-  validates :seconds, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 59 }
+  validates :hours, presence: true, numericality: { greater_than_or_equal_to: 0, only_integer: true }
+  validates :minutes, presence: true, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 59, only_integer: true }
+  validates :seconds, presence: true, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 59, only_integer: true }
 
   def hours
-  @hours.presence || (duration / 3600 if duration.present?)
+    @hours.presence || (duration / 3600 if duration.present?)
   end
 
   def minutes
@@ -24,6 +25,8 @@ class Run < ApplicationRecord
   private
 
   def convert_to_seconds
-    self.duration = (hours.to_i * 3600) + (minutes.to_i * 60) + seconds.to_i
+    self.duration = ((hours || 0).to_i * 3600) +
+                    ((minutes || 0).to_i * 60) +
+                    (seconds || 0).to_i
   end
 end
