@@ -32,7 +32,7 @@ class OpenAiService
       Be concise and direct. Talk like a training partner.
     TEXT
 
-    chat = RubyLLM::Chat.new
+    chat = RubyLLM::Chat.new(model: "gpt-4o-mini")
 
     full_prompt = "#{system_instructions}\n\nUser Question: #{@user_message}"
 
@@ -44,7 +44,7 @@ class OpenAiService
   private
 
   def formatted_history
-    @history.select { |r| r.is_a?(Run) }.last(5).map { |r| "#{r.date}: #{r.distance}km" }.join("\n")
+    @history.select { |r| r.is_a?(Run) }.map { |r| "#{r.date}: #{r.distance}km" }.join("\n")
   end
 
   def formatted_metrics

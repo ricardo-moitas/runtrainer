@@ -10,8 +10,7 @@ class RunsController < ApplicationController
   end
 
   def create
-    @run = Run.new(run_params)
-    @run.user = current_user
+    @run = current_user.runs.new(run_params)
 
     if @run.save
       redirect_to dashboard_path

@@ -4,13 +4,13 @@
     <%= f.input :distance, label: "Distance (km)", required: true %>
     <div class="row">
       <div class="col-4">
-        <%= f.input :hours, label: "Hours", input_html: { min: 0 } %>
+        <%= f.input :hours, label: "Hours", required: true, input_html: { value: 0, min: 0, step: 1 } %>
       </div>
       <div class="col-4">
-        <%= f.input :minutes, label: "Minutes", input_html: { min: 0, max: 59 } %>
+        <%= f.input :minutes, label: "Minutes", required: true, input_html: { value: 0, min: 0, max: 59, step: 1 } %>
       </div>
       <div class="col-4">
-        <%= f.input :seconds, label: "Seconds", input_html: { min: 0, max: 59 } %>
+        <%= f.input :seconds, label: "Seconds", required: true, input_html: { value: 0, min: 0, max: 59, step: 1 } %>
       </div>
     </div>
     <%= f.input :heart_rate %>
